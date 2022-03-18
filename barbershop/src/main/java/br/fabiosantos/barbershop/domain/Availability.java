@@ -13,11 +13,10 @@ import lombok.Getter;
 @EqualsAndHashCode
 public class Availability {
 	private final List<DayOfWeek> daysOfWeek;
-	private LocalTime openTime;
+	private LocalTime openTime = LocalTime.of(8, 0);
 
-	private LocalTime closeTime;
+	private LocalTime closeTime = LocalTime.of(19, 0);;
 	private final LocalTime duration;
-
 
 	public LocalTime getOpenTime() {
 		return openTime;
@@ -64,5 +63,44 @@ public class Availability {
 
 	public List<DayOfWeek> getDaysOfWeek() {
 		return daysOfWeek;
+	}
+
+	public static class Builder {
+		private List<DayOfWeek> daysOfWeek;
+		private LocalTime openTime;
+		private LocalTime closeTime;
+		private LocalTime duration;
+
+		public Builder daysOfWeek(List<DayOfWeek> daysOfWeek) {
+			this.daysOfWeek = daysOfWeek;
+			return this;
+		}
+
+		public Builder openTime(LocalTime openTime) {
+			this.openTime = openTime;
+			return this;
+
+		}
+
+		public Builder closeTime(LocalTime closeTime) {
+			this.closeTime = closeTime;
+			return this;
+
+		}
+
+		public Builder duration(LocalTime duration) {
+			this.duration = duration;
+			return this;
+
+		}
+
+		public Availability build() {
+			return new Availability(daysOfWeek, openTime, closeTime, duration);
+		}
+
+	}
+
+	public static Builder builder() {
+		return new Builder();
 	}
 }

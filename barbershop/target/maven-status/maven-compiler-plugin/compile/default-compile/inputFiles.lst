@@ -14,6 +14,7 @@
 /home/fabio/eclipse-workspace/Barbershop/barbershop/src/main/java/br/fabiosantos/barbershop/domain/Availability.java
 /home/fabio/eclipse-workspace/Barbershop/barbershop/src/main/java/br/fabiosantos/barbershop/ports/in/BookReservationUseCase.java
 /home/fabio/eclipse-workspace/Barbershop/barbershop/src/main/java/br/fabiosantos/barbershop/ports/in/CreateBarbershopUseCase.java
+/home/fabio/eclipse-workspace/Barbershop/barbershop/src/main/java/br/fabiosantos/barbershop/utils/ReservationUtils.java
 /home/fabio/eclipse-workspace/Barbershop/barbershop/src/main/java/br/fabiosantos/barbershop/exception/TimeNotAvailableException.java
 /home/fabio/eclipse-workspace/Barbershop/barbershop/src/main/java/br/fabiosantos/barbershop/ports/out/CreatedBarbershop.java
 /home/fabio/eclipse-workspace/Barbershop/barbershop/src/main/java/br/fabiosantos/barbershop/ports/in/CustomerCommand.java
