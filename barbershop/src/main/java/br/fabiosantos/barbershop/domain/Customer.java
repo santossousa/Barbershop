@@ -45,5 +45,30 @@ public class Customer {
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
+	public static class Builder{
+		private  String name;
+	    private  String email;
+	    private  String phone;
+	    public Builder name(String name) {
+	    	this.name = name;
+	    	return this;
+	    }
+	    public Builder email(String email) {
+	    	this.email = email;
+	    	return this;
+	    }
+	    public Builder phone(String phone) {
+	    	this.phone = phone;
+	    	return this;
+	    }
+	    public Customer build() {
+	    	return new Customer(name, email, phone);
+	    }
+	    
+		
+	}
+	public static Builder builder() {
+		return new Builder();
+	}
 	
 }

@@ -22,16 +22,18 @@ public class Barbershop {
 	private final String address;
 	private final String city;
 	private final Availability availability;
+	private List<Reservation> reservations = new ArrayList<Reservation>();
 	public Barbershop(Builder build) {
 		super();
 		this.name = build.name;
 		this.address = build.address;
 		this.city = build.city;
 		this.availability = build.availability;
+		this.reservations = build.reservations;
 	}
 	
 
-	private final List<Reservation> reservations = new ArrayList<Reservation>();
+	
 
 	public void add(Reservation reservation) {
 		verifyIfTimeIsAlreadyScheduled(reservation);
@@ -80,6 +82,7 @@ public class Barbershop {
 		private String address;
 		private String city;
 		private Availability availability;
+		private List<Reservation> reservations;
 		public Builder(String name) {
 			this.name = name;
 		}
@@ -106,7 +109,10 @@ public class Barbershop {
 			return this;
 
 		}
-
+		public Builder 	reservations(List<Reservation> reservations) {
+			this.reservations = reservations;
+			return this;
+		}
 		public Barbershop build() {
 			return new Barbershop(this);
 		}

@@ -7,7 +7,7 @@ import br.fabiosantos.barbershop.service.BookReservationService;
 public interface BookReservationUseCase {
 	BookedReservation book(BookReservationCommand bookReservationCommand);
 
-    static BookReservationUseCase getInstance(BarbershopRepositoryPort barbershopRepositoryPort) {
+    public static BookReservationUseCase getInstance(BarbershopRepositoryPort barbershopRepositoryPort) {
         return new BookReservationService(barbershopRepositoryPort);
     }
 }

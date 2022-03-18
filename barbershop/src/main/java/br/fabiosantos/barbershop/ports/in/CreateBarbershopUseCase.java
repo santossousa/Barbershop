@@ -8,7 +8,7 @@ import br.fabiosantos.barbershop.service.CreateBarbershopService;
 public interface CreateBarbershopUseCase {
 	CreatedBarbershop create(CreateBarbershopCommand createBarbershopCommand);
 
-	static CreateBarbershopUseCase getInstance(BarbershopRepositoryPort barbershopRepositoryPort) {
-        return new CreateBarbershopService(barbershopRepositoryPort);
+	public static CreateBarbershopUseCase getInstance(BarbershopRepositoryPort barbershopRepositoryPortImpl) {
+        return new CreateBarbershopService(barbershopRepositoryPortImpl);
     }
 }

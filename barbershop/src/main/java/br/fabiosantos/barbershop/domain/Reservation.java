@@ -21,7 +21,7 @@ public class Reservation {
 	private final DayOfWeek dayOfWeek;
 	private final LocalTime time;
 
-	public Reservation(Customer customer, LocalDate date, DayOfWeek dayOfWeek, LocalTime time) {
+	private Reservation(Customer customer, LocalDate date, DayOfWeek dayOfWeek, LocalTime time) {
 		super();
 		this.customer = customer;
 		this.date = date;
@@ -48,4 +48,47 @@ public class Reservation {
 	public Customer getCustomer() {
 		return customer;
 	}
+	public Reservation(Builder builder) {
+		this.customer = builder.customer;
+		this.date = builder.date;
+		this.dayOfWeek = builder.dayOfWeek;
+		this.time = builder.time;
+		
+	}
+
+	public static class Builder {
+		private Customer customer;
+		private LocalDate date;
+		private DayOfWeek dayOfWeek;
+		private LocalTime time;
+		public Builder(Customer customer) {
+			this.customer = customer;
+		}
+
+		public Builder customer(Customer customer) {
+			this.customer = customer;
+			return this;
+		}
+
+		public Builder date(LocalDate date) {
+			this.date = date;
+			return this;
+		}
+
+		public Builder dayOfWeek(DayOfWeek dayOfWeek) {
+			this.dayOfWeek = dayOfWeek;
+			return this;
+		}
+
+		public Builder time(LocalTime time) {
+			this.time = time;
+			return this;
+		}
+
+		public Reservation build() {
+			return new Reservation(this);
+		}
+
+	}
+
 }
